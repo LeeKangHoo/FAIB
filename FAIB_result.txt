@@ -1,0 +1,5 @@
+
+A-1
+warning(/etc/securetty not found.)
+warning(check /etc/ssh/sshd_config)
+warning(check /etc/security/pwquality.conf)
