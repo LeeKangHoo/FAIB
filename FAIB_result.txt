@@ -2,4 +2,9 @@
 A-1
 warning(/etc/securetty not found.)
 warning(check /etc/ssh/sshd_config)
+A-2
 warning(check /etc/security/pwquality.conf)
+A-3
+warning(check /etc/pam.d/system-auth)
+A-4
+A-5

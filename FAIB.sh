@@ -46,6 +46,7 @@ else
 fi
 
 #A-2
+echo "A-2" >> "$result_file"
 file_path="/etc/pam.d/system-auth"
 file_path2="/etc/security/pwquality.conf"
 #if [[ -f "$file_path" ]]; then
@@ -59,4 +60,36 @@ if [[ -f "$file_path2" ]]; then
 else
     echo "warning($file_path or $file_path2 not found.)" >> "$result_file"
 fi
+
+#A-3
+echo "A-3" >> "$result_file"
+file_path="/etc/pam.d/system-auth"
+if [[ -f "$file_path" ]]; then
+    if ! grep -v "^#" "$file_path" | grep -qP "auth\s+required\s+/lib/security/pam_tally.so\s+deny=[^0-4]\s+unlock_time=" || ! grep -v "^#" "$file_path" | grep -q "no_magic_root" || ! grep -v "^#" "$file_path" | grep -qP "account\s+required\s+/lib/security/pam_tally.so\s+no_magic_root\s+reset"; then
+        echo "warning(check $file_path)" >> "$result_file"
+    fi
+else
+    echo "warning($file_path not found.)" >> "$result_file"
+fi
+
+#A-4
+echo "A-4" >> "$result_file"
+file_path="/etc/passwd"
+if [[ -f "$file_path" ]]; then
+    if grep -v "^#" "$file_path" | grep -qvE '^[^:]+:x:'; then
+        echo "warning(check $file_path)" >> "$result_file"
+    fi
+else
+    echo "warning($file_path not found.)" >> "$result_file"
+fi
+
+#A-5
+
+echo "A-5" >> "$result_file"
+temp=$(echo "$PATH" | grep -E '\.|::|:\.:')
+if [[ -z $temp ]]; then
+    echo "warning(PATH variable is weak.)"
+fi
+
+
 
