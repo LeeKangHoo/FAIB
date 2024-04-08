@@ -7,4 +7,5 @@ warning(check /etc/security/pwquality.conf)
 A-3
 warning(check /etc/pam.d/system-auth)
 A-4
-A-5
+FnD-1
+FnD-2

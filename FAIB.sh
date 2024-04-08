@@ -83,13 +83,20 @@ else
     echo "warning($file_path not found.)" >> "$result_file"
 fi
 
-#A-5
+#FnD-1
 
-echo "A-5" >> "$result_file"
+echo "FnD-1" >> "$result_file"
 temp=$(echo "$PATH" | grep -E '\.|::|:\.:')
 if [[ -z $temp ]]; then
     echo "warning(PATH variable is weak.)"
 fi
+
+#FnD-2
+echo "FnD-2" >> "$result_file"
+if [[ -z $(find / -nouser -print | find / -nogroup -print) ]]; then
+    echo good
+fi
+
 
 
 
