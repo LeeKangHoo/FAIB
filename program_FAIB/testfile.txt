@@ -1,4 +1,6 @@
+
 {
-name : kanghoo
-test : true
+  "analysis_code": "test1",
+  "status": "warning"
 }
+
