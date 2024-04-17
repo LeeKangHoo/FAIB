@@ -1,0 +1,20 @@
+
+{
+  "vul_code": "A-1",
+  "status": "warning(/etc/securetty not found.)"
+},
+
+{
+  "vul_code": "A-1",
+  "status": "warning(check /etc/ssh/sshd_config)"
+},
+
+{
+  "vul_code": "A-2",
+  "status": "warning(check /etc/security/pwquality.conf)"
+},
+
+{
+  "vul_code": "A-3",
+  "status": "warning(check /etc/pam.d/system-auth)"
+}
