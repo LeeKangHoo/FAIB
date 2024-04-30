@@ -1,0 +1,63 @@
+body{
+    background-color: #292E41;
+}
+.logo{
+  width: 100px;
+  height: 100px;
+  background: url("logo_transparent.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+
+}
+.first{
+    display: flex;
+    justify-content: space-between;
+}
+.user{
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.user button{
+    width: 100px;
+    height: 100%;
+    font-size: inherit;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+#sign_in {
+    background-color: inherit;
+}
+#sign_up{
+    border-radius: 10px;
+    background-color:#667CA6;
+}
+#profile{
+    background: url(profile.png);
+    background-size: contain;
+    width: 45px;
+    background-position: center center;
+}
+/* sign in 
+
+position: absolute;
+width: 73px;
+height: 21px;
+left: 1654px;
+top: 26px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #FFFFFF;
+*/
