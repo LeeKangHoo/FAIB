@@ -4,7 +4,7 @@
 #First Ahya Is Best
 #FAIB
 #------------------------------------------
-result_file="FAIB_result.json"
+result_file="$(date "+%Y_%m_%d_%H_%M_%S")_FAIB_Result.json"
 echo "" > $result_file
 
 #Json write function
@@ -117,7 +117,6 @@ sed -i '$s/,$//' $result_file
 
 
 #send data
-result_file_path="FAIB_result.json"
-server_url="http://dev.nine9.kr/upload"
-curl -X POST -F "file=@$result_file_path" $server_url
+server_url="https://dev.nine9.kr/upload"
+curl -X POST -F "file=@$result_file" $server_url
 echo ""
