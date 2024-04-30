@@ -45,19 +45,24 @@ body{
     width: 45px;
     background-position: center center;
 }
-/* sign in 
 
-position: absolute;
-width: 73px;
-height: 21px;
-left: 1654px;
-top: 26px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 24px;
-
-color: #FFFFFF;
-*/
+.second{
+    width: 1000;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 7%;
+    padding-left: 35px;
+    padding-top: 10px;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+}
+.score{
+    font-size: 53px;
+    font-weight: bold;
+    color: #22872C;
+}
+.score2{
+    font-size: 20px;
+    font-weight: bold;
+}
