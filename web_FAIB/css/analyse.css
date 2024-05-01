@@ -4,7 +4,7 @@ body{
 .logo{
   width: 100px;
   height: 100px;
-  background: url("logo_transparent.png");
+  background: url("../images/logo_transparent.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -40,7 +40,7 @@ body{
     background-color:#667CA6;
 }
 #profile{
-    background: url(profile.png);
+    background: url(../images/profile.png);
     background-size: contain;
     width: 45px;
     background-position: center center;
