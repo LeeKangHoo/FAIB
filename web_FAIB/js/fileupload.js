@@ -1,5 +1,39 @@
 const express = require('express');
 const multer  = require('multer');
+const router = express.Router();
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+const upload = multer({ storage: storage });
+
+router.post('/upload', upload.single('file'), (req, res) => {
+    res.send('File uploaded');
+});
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const express = require('express');
+const multer  = require('multer');
 const app = express();
 
 const storage = multer.diskStorage({
@@ -22,6 +56,6 @@ app.listen(19132, () => {
     console.log('LeeKangHoo(Nine)');
     console.log('Server port 19132');
     console.log('@@@@@@@@@@@@@@@@@@@@@@@@');
-});
+});*/
 
 
