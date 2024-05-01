@@ -5,9 +5,10 @@ const router = express.Router();
 
 
 router.get('/', (req, res, next) => {
+    const filename ="FAIB.sh"
     const filePath = '../../program_FAIB/FAIB.sh';
     const absolutePath = path.resolve(__dirname, filePath);
-    res.setHeader('Content-Disposition', `attachment; filename=FAIB.sh`); // 이게 핵심 
+    res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
     res.sendFile(absolutePath);
   });  
 
