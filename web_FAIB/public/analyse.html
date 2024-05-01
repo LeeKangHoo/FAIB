@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
     <link rel="stylesheet" href="css/analyse.css">
     <title>FAIB</title>
 </head>
@@ -18,7 +19,8 @@
         </div>
     </div>
     <div class="second">
-        <div class="score">60/100</div><br>
+        <div class="second2">
+            <div class="score">60/100</div><br>
         <div class="score2">
             <div class="account">계정 관리 2/15</div>
             <div class="fnd">파일 및 디렉터리 관리 2/15</div>
@@ -26,8 +28,27 @@
             <div class="fatch">패치 관리 2/15</div>
             <div class="log">로그 관리 2/15</div>
         </div>
-       
+        </div>
+        <canvas id="myChart" width="500" height="500">
+            <script>let myCt = document.getElementById('myChart');
 
+                let myChart = new Chart(myCt, {
+                  type: 'pie',
+                  data: {
+                    labels: ['2020', '2021', '2022', '2023'],
+                    datasets: [
+                      {
+                        label: 'Dataset',
+                        data: [10,20,30,40],
+                      }
+                    ]
+                  },
+                  options: {
+            responsive: false, 
+            maintainAspectRatio: false 
+        }
+                });</script>
+        </canvas>
     </div>
 </body>
 </html>

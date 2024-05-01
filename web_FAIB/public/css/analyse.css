@@ -56,6 +56,8 @@ body{
     padding-top: 10px;
     border-radius: 7px;
     background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
 }
 .score{
     font-size: 53px;
@@ -65,4 +67,7 @@ body{
 .score2{
     font-size: 20px;
     font-weight: bold;
+}
+#myChart{
+    margin-right: 10%;
 }

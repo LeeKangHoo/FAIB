@@ -5,6 +5,7 @@ const analyse_router = require('./analyse');
 //const profile_router = require('./profile');
 const app = express();
 
+app.use(express.static('public'));
 
 app.use('/upload',fileupload_router);
 app.use('/analyse',analyse_router);
