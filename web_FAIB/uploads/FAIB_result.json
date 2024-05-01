@@ -57,5 +57,30 @@
   {
     "vul_code": "S",
     "status": "warning(check /etc/security/pwquality.conf)"
+  },
+  {
+    "vul_code": "L",
+    "status": "warning(check /etc/security/pwquality.conf)"
+  },
+  {
+    "vul_code": "L",
+    "status": "warning(check /etc/security/pwquality.conf)"
+  },
+  {
+    "vul_code": "L",
+    "status": "warning(check /etc/security/pwquality.conf)"
+  },
+  {
+    "vul_code": "L",
+    "status": "warning(check /etc/security/pwquality.conf)"
+  },
+
+  {
+    "vul_code": "F",
+    "status": "warning(check /etc/security/pwquality.conf)"
+  },
+  {
+    "vul_code": "F",
+    "status": "warning(check /etc/security/pwquality.conf)"
   }
 ]
