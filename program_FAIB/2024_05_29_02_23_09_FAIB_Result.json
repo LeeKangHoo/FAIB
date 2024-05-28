@@ -1,0 +1,40 @@
+
+{
+  "vul_code": "A-1",
+  "status": "warning(check /etc/pam.d/login)"
+},
+
+{
+  "vul_code": "A-1",
+  "status": "warning(/etc/securetty not found.)"
+},
+
+{
+  "vul_code": "A-1",
+  "status": "warning(check /etc/ssh/sshd_config)"
+},
+
+{
+  "vul_code": "A-2",
+  "status": "warning(/etc/pam.d/system-auth or /etc/security/pwquality.conf not found)"
+},
+
+{
+  "vul_code": "A-3",
+  "status": "warning(/etc/pam.d/system-auth not found.)"
+},
+
+{
+  "vul_code": "FnD-1",
+  "status": "warning(PATH variable is weak.)"
+},
+
+{
+  "vul_code": "FnD-3",
+  "status": "warning(/etc/passwd file's owner or group is not root"
+},
+
+{
+  "vul_code": "FnD-4",
+  "status": "warning(/etc/passwd file's owner is not root"
+}

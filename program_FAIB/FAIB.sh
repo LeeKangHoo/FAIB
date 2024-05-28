@@ -108,6 +108,34 @@ fi
 #    echo good
 #fi
 
+#FnD-3
+code="FnD-3"
+file_path="/etc/passwd"
+temp=$(ls -l /etc/passwd)
+if [[ -f "$file_path" ]]; then
+	owner=$(echo "temp" | awk '{print $3}')
+	group=$(echo "temp" | awk '{print $4}')
+	if [[ !("$owner" == "root" && $group == "root") ]]; then
+		json "$code" "warning(/etc/passwd file's owner or group is not root"
+	fi
+else
+	json "$code" "warning($file_path not found.)"
+fi
+
+#FnD-4
+code="FnD-4"
+file_path="/etc/passwd"
+temp=$(ls -l /etc/shadow)
+if [[ -f "$file_path" ]]; then
+        owner=$(echo "temp" | awk '{print $3}')
+        if [[ !("$owner" == "root") ]]; then
+                json "$code" "warning(/etc/passwd file's owner is not root"
+        fi
+	echo "good"
+else
+        json "$code" "warning($file_path not found.)"
+fi
+		
 
 
 
