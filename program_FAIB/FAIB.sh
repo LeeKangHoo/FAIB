@@ -116,7 +116,7 @@ if [[ -f "$file_path" ]]; then
 	owner=$(echo "temp" | awk '{print $3}')
 	group=$(echo "temp" | awk '{print $4}')
 	if [[ !("$owner" == "root" && $group == "root") ]]; then
-		json "$code" "warning(/etc/passwd file's owner or group is not root"
+		json "$code" "warning(/etc/passwd file of owner or group is not root"
 	fi
 else
 	json "$code" "warning($file_path not found.)"
@@ -129,14 +129,38 @@ temp=$(ls -l /etc/shadow)
 if [[ -f "$file_path" ]]; then
         owner=$(echo "temp" | awk '{print $3}')
         if [[ !("$owner" == "root") ]]; then
-                json "$code" "warning(/etc/passwd file's owner is not root"
+                json "$code" "warning(/etc/passwd file of owner is not root"
         fi
 	echo "good"
 else
         json "$code" "warning($file_path not found.)"
 fi
 		
+#FnD-5
+code="FnD-5"
+file_path="/etc/hosts"
+temp=$(ls -l /etc/hosts)
+if [[ -f "$file_path" ]]; then
+	owner=$(echo "temp" | awk '{print $3}')
+	if [[ !("$owner" == root) ]]; then
+		json "$code" "warning(/etc/hosts file of owner is not root"
+	fi
+else
+	json "$code" "warning($file_path not found.)"
+fi
 
+#FnD-6
+code="FnD-6"
+file_path="/etc/xinetd.conf"
+temp=$(ls -l /etc/xinetd.conf)
+if [[ -f "$file_path" ]]; then
+        owner=$(echo "temp" | awk '{print $3}')
+        if [[ !("$owner" == root) ]]; then
+                json "$code" "warning(/etc/xinetd.conf file of owner is not root"
+        fi
+else
+        json "$code" "warning($file_path not found.)"
+fi
 
 
 #delete last ,
