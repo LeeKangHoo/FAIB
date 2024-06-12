@@ -35,11 +35,19 @@ app.get("/", (req, res) => {
 app.get("/logout", (req, res) => {
   if (req.session.user) {
     // 세션에 유저가 존재한다면
-    req.session.destroy();
+    req.session.destroy((err) => {
+      if (err) {
+        console.error('세션 삭제 중 에러 발생:', err);
+        res.status(500).send('세션 삭제 중 에러 발생');
+      } else {
+        res.redirect("/login"); // 로그아웃 후 로그인 페이지로 리다이렉트
+      }
+    });
   } else {
-    res.redirect("/login"); 
+    res.redirect("/login");
   }
 });
+
 
 app.listen(19132, () => {
     console.log('@@@@@@@@  FAIB  @@@@@@@@');
