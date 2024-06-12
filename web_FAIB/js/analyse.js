@@ -16,7 +16,7 @@ function checkSession(req, res, next) {
 router.get('/',checkSession,(req,res) => {
     //const filepath = path.join(__dirname + "/../public/analyse.html");
     //res.sendFile(filepath);
-    const jsonFile = fs.readFileSync('uploads/FAIB_result.json', 'utf-8');
+    const jsonFile = fs.readFileSync('../uploads/FAIB_result.json', 'utf-8');
     const jsonData = JSON.parse(jsonFile);
     
     var number = [0,0,0,0,0];
