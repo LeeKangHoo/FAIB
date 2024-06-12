@@ -13,9 +13,8 @@ router.get('/', (req, res) => {
 // 로그인 요청을 처리하는 라우터
 router.post('/login_process', (req, res) => {
     const { username, password } = req.body;
-    const conn = db.init();
 
-    conn.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
+    db.query('SELECT * FROM users WHERE username = ?', [username], (err, results) => {
         if (err) {
             console.error('MySQL 에러: ', err);
             res.status(500).send('서버 에러');
