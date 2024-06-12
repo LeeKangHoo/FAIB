@@ -4,8 +4,16 @@ const path = require("path");
 const chart = require("chart.js");
 const fs = require("fs");
 
+function checkSession(req, res, next) {
+    if (req.session && req.session.user) {
+        next();
+    } else {
+        res.redirect("/login");
+    }
+}
 
-router.get('/',(req,res) => {
+
+router.get('/',checkSession,(req,res) => {
     //const filepath = path.join(__dirname + "/../public/analyse.html");
     //res.sendFile(filepath);
     const jsonFile = fs.readFileSync('uploads/FAIB_result.json', 'utf-8');
