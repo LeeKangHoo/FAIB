@@ -32,9 +32,6 @@ body{
     border: none;
     cursor: pointer;
 }
-#sign_in {
-    background-color: inherit;
-}
 #logout{
     border-radius: 10px;
     background-color:#667CA6;
