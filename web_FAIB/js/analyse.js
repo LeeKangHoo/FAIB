@@ -16,6 +16,7 @@ function checkSession(req, res, next) {
 router.get('/',checkSession,(req,res) => {
     //const filepath = path.join(__dirname + "/../public/analyse.html");
     //res.sendFile(filepath);
+    console.log
     const jsonFile = fs.readFileSync('uploads/FAIB_result.json', 'utf-8');
     const jsonData = JSON.parse(jsonFile);
     
@@ -62,8 +63,7 @@ router.get('/',checkSession,(req,res) => {
             <div class="logo"></div>
             
             <div class="user">
-                <button id="sign_in">sign in</button>
-                <button id="sign_up">sign up</button>
+                <button id="logout">logout</button>
                 <button id="profile"></div>
     
             </div>
