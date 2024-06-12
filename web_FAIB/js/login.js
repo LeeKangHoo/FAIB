@@ -24,13 +24,13 @@ router.post('/login_process', (req, res) => {
             const user = results[0];
             if (password === user.password) {
                 req.session.user = user;
-                res.send('로그인 성공');
                 req.session.user = {
                     user: username,
                     auth: true
                 };
+                res.redirect("/analyse");
             } else {
-                res.status(401).send('유효하지 않은 비밀번호');
+                res.write("<script>alert('로그인 실패')</script>");
             }
         }
     });
