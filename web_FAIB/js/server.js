@@ -2,7 +2,7 @@ const express = require("express");
 const fileupload_router = require('./fileupload');
 const analyse_router = require('./analyse');
 const filedownload_router = require('./filedownload');
-//const login_router = require('./login');
+const login_router = require('./login');
 //const profile_router = require('./profile');
 const app = express();
 
@@ -11,6 +11,7 @@ app.use(express.static('public'));
 app.use('/upload',fileupload_router);
 app.use('/analyse',analyse_router);
 app.use('/download',filedownload_router);
+app.use('/login', login_router);
 
 
 app.listen(19132, () =>{
