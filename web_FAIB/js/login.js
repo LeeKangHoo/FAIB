@@ -25,6 +25,10 @@ router.post('/login_process', (req, res) => {
             if (password === user.password) {
                 req.session.user = user;
                 res.send('로그인 성공');
+                req.session.user = {
+                    user: username,
+                    auth: true
+                };
             } else {
                 res.status(401).send('유효하지 않은 비밀번호');
             }

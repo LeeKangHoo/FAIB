@@ -16,10 +16,22 @@ app.use(session({
     saveUninitialized: true
 }));
 
+
 app.use('/upload', fileupload_router);
 app.use('/analyse', analyse_router);
 app.use('/download', filedownload_router);
 app.use('/login', login_router);
+
+
+app.get("/", (req, res) => {
+  if (req.session.user) {
+    // 세션에 유저가 존재한다면
+    res.redirect("/analyse"); 
+  } else {
+    res.redirect("/login"); 
+  }
+});
+
 
 app.listen(19132, () => {
     console.log('@@@@@@@@  FAIB  @@@@@@@@');
