@@ -169,6 +169,6 @@ sed -i '$s/,$//' $result_file
 
 
 #send data
-server_url="https://dev.nine9.kr/upload"
+server_url="https://dev.nine9.kr/fileupload"
 curl -X POST -F "file=@$result_file" $server_url
 echo ""
