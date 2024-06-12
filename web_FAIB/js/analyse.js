@@ -6,8 +6,6 @@ const fs = require("fs");
 
 
 router.get('/',(req,res) => {
-    if (res.session.user) {
-    console.log(res.session.user);
     //const filepath = path.join(__dirname + "/../public/analyse.html");
     //res.sendFile(filepath);
     const jsonFile = fs.readFileSync('uploads/FAIB_result.json', 'utf-8');
@@ -97,11 +95,6 @@ router.get('/',(req,res) => {
     </body>
     </html>`;
     res.send(output)
-
-
-    }else{
-        res.redirect('/login');
-    }
     
 });
 
