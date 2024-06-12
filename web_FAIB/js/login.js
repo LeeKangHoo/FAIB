@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 });
 
 // 로그인 요청을 처리하는 라우터
-router.post('/', (req, res) => {
+router.post('/login_process', (req, res) => {
     const { username, password } = req.body;
     const conn = db.init();
 

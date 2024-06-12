@@ -1,16 +1,17 @@
-const mysql = require('mysql2/promise');
-const dbInfo = mysql.createConnection({
+const mysql = require('mysql2');
+const db = mysql.createConnection({
     host:'localhost',
     user:'kkanghoo',
     password:'kkanghoo!@#0828',
-    port:3306,
     database:'client'
 });
 //id : lkh, pw : test
+db.connect();
+module.exports = db;
 
-module.exports = {
+/*module.exports = {
     init: function () {
-        return mysql.createConnection(dbInfo);
+        return mysql.createConnection(db);
     },
     connect: function(conn) {
         conn.connect(function(err) {
@@ -18,4 +19,4 @@ module.exports = {
             else console.log('mysql 연결 성공');
         });
     }
-};
+};*/
