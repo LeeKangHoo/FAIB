@@ -32,6 +32,14 @@ app.get("/", (req, res) => {
   }
 });
 
+app.get("/logout", (req, res) => {
+  if (req.session.user) {
+    // 세션에 유저가 존재한다면
+    req.session.destroy;
+  } else {
+    res.redirect("/login"); 
+  }
+});
 
 app.listen(19132, () => {
     console.log('@@@@@@@@  FAIB  @@@@@@@@');
